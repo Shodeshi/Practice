@@ -12,9 +12,9 @@ public class Main {
 
 		// Build coefficient array
 		String line[] = read.readLine().split(" ");
-		int arr[] = new int[4];
+		double arr[] = new double[4];
 		for(int i=0;i<4;i++){
-			arr[i] = Integer.parseInt(line[i]);
+			arr[i] = Double.parseDouble(line[i]);
 		}
 		
 		// Read the number a and b
@@ -26,7 +26,7 @@ public class Main {
 		System.out.println(String.format("%.2f", getRoot(arr, a, b)));
 	}
 	
-	public static double calculateSum(int[] arr, double x){
+	public static double calculateSum(double[] arr, double x){
 		double result = 0;
 		for (int i = 0; i < arr.length; i++) {
 			result = x * result + arr[i];
@@ -34,7 +34,7 @@ public class Main {
 		return result;
 	}
 	
-	public static double getRoot(int[] arr, double a, double b){
+	public static double getRoot(double[] arr, double a, double b){
 		double middle = (a + b) / 2;
 		
 		if(Math.abs(a - b) < MINIMUM_LENGTH)
